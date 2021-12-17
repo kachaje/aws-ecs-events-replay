@@ -1,0 +1,10 @@
+{
+  "name": "lambda",
+  "version": "0.0.1",
+  "description": "Sample Lambda Function",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.24.0"
+  }
+}
