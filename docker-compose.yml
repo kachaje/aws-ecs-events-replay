@@ -19,3 +19,5 @@ services:
       - DNS_ADDRESS=0
     volumes:
       - "${TMPDIR:-/tmp/localstack}:/tmp/localstack"
+      - "./bin:/docker-entrypoint-initaws.d"
+      - "./lambda:/tmp/lambda"
