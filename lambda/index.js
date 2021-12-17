@@ -9,4 +9,6 @@ exports.handler = async function (event, context) {
   const apiData = JSON.stringify(event);
 
   apiAgent(apiData, apiUrl);
+
+  return context.logStreamName;
 };

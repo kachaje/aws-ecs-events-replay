@@ -14,7 +14,7 @@ FUNC=sample-lambda
 AWS_ARN_ROLE=AWSLambda_FullAccess
 
 pushd /tmp/lambda 
-    zip deploy.zip index.js
+    zip -r deploy.zip ./*
 
     echo 'Creating Lambda Function'
     awslocal lambda create-function --function-name $FUNC \
