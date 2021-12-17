@@ -1,0 +1,19 @@
+{
+  "name": "api",
+  "version": "0.0.1",
+  "description": "Sample API",
+  "main": "app.js",
+  "author": "-",
+  "license": "MIT",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

@@ -19,7 +19,8 @@ pushd /tmp/lambda
     echo 'Creating Lambda Function'
     awslocal lambda create-function --function-name $FUNC \
         --zip-file fileb://deploy.zip --handler index.handler \
-        --runtime nodejs14.x --role ${AWS_ARN_ROLE}
+        --runtime nodejs14.x --role ${AWS_ARN_ROLE} \
+        --environment "Variables={DOCKER_GATEWAY_HOST=$DOCKER_GATEWAY_HOST,API_PORT=$API_PORT}"
 
     echo 'Removing zip file';
     rm deploy.zip
