@@ -23,6 +23,7 @@ services:
       - "${TMPDIR:-/tmp/localstack}:/tmp/localstack"
       - "./bin:/docker-entrypoint-initaws.d"
       - "./lambda:/tmp/lambda"
+      - "./ecs-task:/tmp/ecs-task" 
   api:
     container_name: api
     build:

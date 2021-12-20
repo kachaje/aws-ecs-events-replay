@@ -65,6 +65,10 @@ awslocal lambda add-permission \
 
 awslocal events put-targets --rule monitor-ecs-state-changes --targets "Id"="1","Arn"="arn:aws:lambda:us-east-1:000000000000:function:$FUNC"
 
+pushd /tmp/ecs-task
+    awslocal ecs register-task-definition --cli-input-json file://task-definition.json
+popd
+
 set +x
 
 while true; do (echo -e 'HTTP/1.1 200 OK\r\n'; printf "OK") | nc -lp 8080; done
