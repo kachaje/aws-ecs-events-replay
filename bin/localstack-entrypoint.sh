@@ -8,7 +8,25 @@ sleep 5;
 
 set -x
 
-apt install netcat jq -y -q
+apk add jq
+
+# apt update -y -q
+
+# apt install -y -q netcat jq 
+
+# apt install -y apt-transport-https ca-certificates gnupg2 software-properties-common
+
+# curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+
+# add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+
+# apt-cache policy docker-ce
+
+# apt update -y
+
+# apt install -y docker-ce
+
+# usermod -aG docker ${USER}
 
 mkdir -p ~/.aws
 echo "[default]" > ~/.aws/config 
@@ -21,6 +39,8 @@ awslocal iam create-access-key --user-name test > keys.json
 echo "[default]" > ~/.aws/credentials 
 echo "aws_access_key_id=$(cat keys.json | jq '.AccessKey.AccessKeyId')" >> ~/.aws/credentials 
 echo "aws_secret_access_key=$(cat keys.json | jq '.AccessKey.SecretAccessKey')" >> ~/.aws/credentials 
+
+awslocal ecs create-cluster --cluster-name default
 
 awslocal iam create-role --role-name ecsTaskExecutionRole --assume-role-policy-document '{ "Version": "2012-10-17", "Statement": [ { "Sid": "", "Effect": "Allow", "Principal": { "Service": "ecs-tasks.amazonaws.com" }, "Action": "sts:AssumeRole" } ] }'
 
