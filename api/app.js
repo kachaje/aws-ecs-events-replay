@@ -12,7 +12,11 @@ app.get("/", (_, res) => {
 });
 
 app.post("/", (req, res) => {
+  console.log("");
+  console.log("*******************");
   console.log(req.body);
+  console.log("*******************");
+  console.log("");
   res.send("Done!");
 });
 
