@@ -10,24 +10,6 @@ set -x
 
 apk add jq
 
-# apt update -y -q
-
-# apt install -y -q netcat jq 
-
-# apt install -y apt-transport-https ca-certificates gnupg2 software-properties-common
-
-# curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
-
-# add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
-
-# apt-cache policy docker-ce
-
-# apt update -y
-
-# apt install -y docker-ce
-
-# usermod -aG docker ${USER}
-
 mkdir -p ~/.aws
 echo "[default]" > ~/.aws/config 
 echo "region = us-east-1" >> ~/.aws/config
