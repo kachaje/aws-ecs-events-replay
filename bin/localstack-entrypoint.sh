@@ -8,8 +8,8 @@ sleep 5;
 
 set -x
 
-apk add jq
-
+apt-get install -y jq netcat
+ 
 mkdir -p ~/.aws
 echo "[default]" > ~/.aws/config 
 echo "region = us-east-1" >> ~/.aws/config
