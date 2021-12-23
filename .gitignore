@@ -1,2 +1,4 @@
 **/node_modules/
 **/response.json
+**/*.log
+**/.DS_Store
